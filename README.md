@@ -1,0 +1,1 @@
+Gerenciador de tarefas desenvolvido para praticar HTML, CSS, JavaScript, Git e GitHub.
