@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="TaskFlow é um gerenciador de tarefas simples e intuitivo."
+    >
+
+    <title>TaskFlow | Gerenciador de tarefas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo" aria-label="Página inicial do TaskFlow">
+            <span class="logo-icon">✓</span>
+            <span>TaskFlow</span>
+        </a>
+
+        <button
+            type="button"
+            class="theme-button"
+            id="theme-button"
+            aria-label="Alternar tema"
+        >
+            ☾
+        </button>
+    </header>
+
+    <main class="container">
+        <section class="presentation">
+            <span class="tag">Organização simples</span>
+
+            <h1>Organize suas tarefas e faça seu dia render.</h1>
+
+            <p>
+                Adicione suas atividades, acompanhe o progresso e mantenha
+                o foco no que realmente importa.
+            </p>
+        </section>
+
+        <section class="task-card">
+            <form class="task-form" id="task-form">
+                <label for="task-input" class="sr-only">
+                    Digite uma nova tarefa
+                </label>
+
+                <input
+                    type="text"
+                    id="task-input"
+                    placeholder="O que precisa ser feito?"
+                    maxlength="80"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" class="add-button">
+                    <span aria-hidden="true">+</span>
+                    Adicionar
+                </button>
+            </form>
+
+            <div class="task-toolbar">
+                <div class="filters" aria-label="Filtros de tarefas">
+                    <button
+                        type="button"
+                        class="filter-button active"
+                        data-filter="all"
+                    >
+                        Todas
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="pending"
+                    >
+                        Pendentes
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="completed"
+                    >
+                        Concluídas
+                    </button>
+                </div>
+
+                <p class="task-counter">
+                    <strong id="task-counter">0</strong>
+                    tarefas
+                </p>
+            </div>
+
+            <ul class="task-list" id="task-list"></ul>
+
+            <div class="empty-state" id="empty-state">
+                <span aria-hidden="true">✓</span>
+                <h2>Nenhuma tarefa por aqui</h2>
+                <p>Adicione uma tarefa para começar a organizar seu dia.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>
+            Dtz 2026.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
