@@ -13,21 +13,45 @@ taskForm.addEventListener("submit", function (event) {
         return;
     }
 
-    const taskItem = document.createElement("li");
-    taskItem.classList.add("task-item");
-
-    const text = document.createElement("span");
-    text.classList.add("task-text");
-    text.textContent = taskText;
-
-    taskItem.appendChild(text);
-    taskList.appendChild(taskItem);
+    createTask(taskText);
 
     taskInput.value = "";
     taskInput.focus();
 
     updateTaskCounter();
 });
+
+function createTask(taskText) {
+    const taskItem = document.createElement("li");
+    taskItem.classList.add("task-item");
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.classList.add("task-checkbox");
+
+    const text = document.createElement("span");
+    text.classList.add("task-text");
+    text.textContent = taskText;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-button");
+    deleteButton.textContent = "Excluir";
+
+    checkbox.addEventListener("change", function () {
+        taskItem.classList.toggle("completed");
+    });
+
+    deleteButton.addEventListener("click", function () {
+        taskItem.remove();
+        updateTaskCounter();
+    });
+
+    taskItem.appendChild(checkbox);
+    taskItem.appendChild(text);
+    taskItem.appendChild(deleteButton);
+
+    taskList.appendChild(taskItem);
+}
 
 function updateTaskCounter() {
     const totalTasks = taskList.children.length;
