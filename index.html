@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>TaskFlow</h1>
+        <p>Organize suas tarefas de forma simples.</p>
+    </header>
+
+    <main class="task-container">
+        <h2>Minhas tarefas</h2>
+
+        <form id="task-form" class="task-form">
+            <input
+                type="text"
+                id="task-input"
+                placeholder="Digite uma nova tarefa"
+                maxlength="80"
+                required
+            >
+
+            <button type="submit" class="add-button">
+                Adicionar
+            </button>
+        </form>
+
+        <div class="filters">
+            <button
+                type="button"
+                class="filter-button active"
+                data-filter="all"
+            >
+                Todas
+            </button>
+
+            <button
+                type="button"
+                class="filter-button"
+                data-filter="pending"
+            >
+                Pendentes
+            </button>
+
+            <button
+                type="button"
+                class="filter-button"
+                data-filter="completed"
+            >
+                Concluídas
+            </button>
+        </div>
+
+        <p id="task-counter" class="task-counter">
+            0 tarefas
+        </p>
+
+        <ul id="task-list" class="task-list"></ul>
+
+        <p id="empty-message" class="empty-message">
+            Você ainda não adicionou nenhuma tarefa.
+        </p>
+    </main>
+
+    <footer>
+        <p>dtzxz 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
